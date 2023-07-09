@@ -17,24 +17,22 @@ interface Props {
 export const Fab = (props: Props) => {
   const ios = () => {
     return (
-      <View>
-        <TouchableOpacity
-          // style={
-          //   props.position === 'bl'
-          //     ? styles.fabLocationLeft
-          //     : styles.fabLocationRight
-          // }
-          style={[
-            styles.fabLocation,
-            props.position === 'bl' ? styles.left : styles.right,
-          ]}
-          activeOpacity={0.75}
-          onPress={() => props.onPress()}>
-          <View style={styles.fab}>
-            <Text style={styles.fabText}> {props.title} </Text>
-          </View>
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity
+        // style={
+        //   props.position === 'bl'
+        //     ? styles.fabLocationLeft
+        //     : styles.fabLocationRight
+        // }
+        style={[
+          styles.fabLocation,
+          props.position === 'bl' ? styles.left : styles.right,
+        ]}
+        activeOpacity={0.75}
+        onPress={() => props.onPress()}>
+        <View style={styles.fab}>
+          <Text style={styles.fabText}> {props.title} </Text>
+        </View>
+      </TouchableOpacity>
     );
   };
 
@@ -95,16 +93,6 @@ const styles = StyleSheet.create({
     right: 25,
   },
   left: {
-    left: 25,
-  },
-  fabLocationRight: {
-    position: 'absolute',
-    bottom: 25,
-    right: 25,
-  },
-  fabLocationLeft: {
-    position: 'absolute',
-    bottom: 25,
     left: 25,
   },
 });
